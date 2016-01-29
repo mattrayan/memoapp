@@ -1,13 +1,16 @@
-angular.module('musicdb', ['ngRoute', 'flux', 'angularSoundManager'])
+angular.module('musicdb', ['ui.router', 'flux', 'angularSoundManager'])
 
 .controller('musicdbCtrl', ['$scope', '$location', function($scope, $location) {
-    $scope.go = function(path) {
-        $location.path(path);
-    };
+    // Controller code
 }])
 
-.config(function($routeProvider) {
-    $routeProvider.when('/', {
-        templateUrl: './templates/home.html',
+.config(function($stateProvider, $urlRouterProvider) {
+   $urlRouterProvider.otherwise('/');
+
+   $stateProvider
+    .state('discovery', {
+        url: '/',
+        templateUrl: './templates/home.html'
     });
+
 });
