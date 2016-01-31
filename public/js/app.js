@@ -10,7 +10,7 @@ angular.module('musicdb', ['ui.router', 'flux', 'angularSoundManager'])
    $stateProvider
     .state('discovery', {
         url: '/',
-        templateUrl: './templates/home.html'
+        templateUrl: './states/discovery/discovery.html'
     });
 
 });
