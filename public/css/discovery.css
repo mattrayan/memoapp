@@ -1,0 +1,21 @@
+.search {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+
+.search .fa-search {
+    margin-right: 15px;
+}
+
+.search input {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid #000000;
+}
+
+.search input:focus {
+    outline: none;
+}

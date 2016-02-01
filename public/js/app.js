@@ -1,4 +1,4 @@
-angular.module('musicdb', ['ui.router', 'flux', 'angularSoundManager'])
+angular.module('musicdb', ['ui.router', 'flux', 'angularSoundManager', 'ngMaterial', 'discovery'])
 
 .controller('musicdbCtrl', ['$scope', '$location', function($scope, $location) {
     // Controller code
@@ -10,7 +10,9 @@ angular.module('musicdb', ['ui.router', 'flux', 'angularSoundManager'])
    $stateProvider
     .state('discovery', {
         url: '/',
-        templateUrl: './states/discovery/discovery.html'
+        templateUrl: './states/discovery/discovery.html',
+        controller: 'discoveryCtrl',
+        controllerAs: 'vm'
     });
 
 });
