@@ -1,4 +1,4 @@
-angular.module('musicdb', ['ui.router', 'flux', 'angularSoundManager', 'ngMaterial', 'discovery'])
+angular.module('musicdb', ['ui.router', 'flux', 'angularSoundManager', 'ngMaterial', 'discovery', 'spotifyService'])
 
 .controller('musicdbCtrl', ['$scope', '$location', function($scope, $location) {
     // Controller code

@@ -1,8 +1,12 @@
 angular.module('discovery', [])
-.controller('discoveryCtrl', ['$scope', function($scope) {
-    
+.controller('discoveryCtrl', ['$scope', 'spotifyAPI', function($scope, spotifyAPI) {
+
+    this.query = {};
+
     this.search = function() {
-        console.log('Search');
+        spotifyAPI.getArtists(this.query.request).then(function(data) {
+            console.log(data);
+        });
     }
-    
+
 }]);
