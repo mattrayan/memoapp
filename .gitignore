@@ -44,3 +44,6 @@ Temporary Items
 
 # NPM
 node_modules/
+
+# Bower Components
+public/lib
