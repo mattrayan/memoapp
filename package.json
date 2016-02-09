@@ -1,14 +1,25 @@
 {
-    "name": "angular-node-music",
-    "version": "0.0.0",
-	"description": "Spotify music rapplication using AngularJS, Flux, and Node",
-    "main": "server.js",
-    "author": "Matt Rayan",
-    "dependencies": {
-        "express": "~4.7.2",
-        "mongoose": "~3.6.2",
-        "morgan": "~1.2.2",
-        "body-parser": "~1.5.2",
-        "method-override": "~2.1.2"
-    }
+  "name": "angular-node-music",
+  "version": "0.0.0",
+  "description": "Spotify music rapplication using AngularJS, Flux, and Node",
+  "main": "server.js",
+  "author": "Matt Rayan",
+  "dependencies": {
+    "express": "~4.7.2",
+    "mongoose": "~3.6.2",
+    "morgan": "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.2",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0"
+  }
 }
