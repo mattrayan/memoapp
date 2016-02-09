@@ -1,4 +1,4 @@
-<div class="search">
+<div class="search" ng-class="{stage: vm.welcome, move: !vm.welcome}">
     <form ng-submit="vm.search()">
         <i class="fa fa-search"></i><input type="text" ng-model="vm.query.request" placeholder="Search for music" >
     </form>
