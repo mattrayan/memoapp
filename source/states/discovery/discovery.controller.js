@@ -3,11 +3,12 @@ angular.module('discovery', ['ngAnimate'])
     var self = this;
 
     this.query = {};
+    this.artists = [];
     this.welcome = true;
 
     this.search = function() {
         spotifyAPI.getArtists(this.query.request).then(function(data) {
-            console.log(data);
+            self.artists = data;
             self.welcome = false;
         });
     };

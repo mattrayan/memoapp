@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['jshint', 'copyHtml', 'copyLibs', 'build-js', 'build-css', 'watch']);
 
 gulp.task('jshint', function() {
-    return gulp.src(['source/app.js', 'source/api/*.js', 'source/states/discovery/*.js'])
+    return gulp.src(['source/app.js', 'source/api/*.js', 'source/components/grid/*.js', 'source/states/discovery/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'));
 });
@@ -19,7 +19,7 @@ gulp.task('copyLibs', function() {
 });
 
 gulp.task('build-js', function() {        
-    gulp.src(['source/app.js', 'source/api/*.js', 'source/states/discovery/*.js'])
+    gulp.src(['source/app.js', 'source/api/*.js', 'source/components/grid/*.js', 'source/states/discovery/*.js'])
         .pipe(sourcemaps.init())
         .pipe(concat('bundle.js'))
         .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
@@ -35,6 +35,7 @@ gulp.task('build-css', function() {
 
 gulp.task('copyHtml', function() {
     gulp.src('source/states/discovery/*.html').pipe(gulp.dest('public/states/discovery'));
+    gulp.src('source/components/grid/grid.html').pipe(gulp.dest('public/components/grid'));
     gulp.src('source/index.html').pipe(gulp.dest('public'));
 });
 
