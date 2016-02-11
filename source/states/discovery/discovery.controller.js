@@ -1,5 +1,5 @@
 angular.module('discovery', ['ngAnimate'])
-.controller('discoveryCtrl', ['$scope', 'spotifyAPI', function($scope, spotifyAPI) {
+.controller('discoveryCtrl', ['$scope', 'spotifyAPI', 'actions', 'store', function($scope, spotifyAPI, actions, store) {
     var self = this;
 
     this.query = {};
@@ -8,27 +8,24 @@ angular.module('discovery', ['ngAnimate'])
     this.tracks = [];
     this.welcome = true;
 
+    $scope.$listenTo(store, ['artists'], function() {
+        self.artists = store.artists;
+    });
+
+    $scope.$listenTo(store, ['albums'], function() {
+        self.albums = store.albums;
+    });
+
+    $scope.$listenTo(store, ['tracks'], function() {
+        self.tracks = store.tracks;
+    });
+
     this.search = function() {
         this.welcome = false;
 
-        spotifyAPI.getData(this.query.request, 'artist').then(function(data) {
-            self.artists = data;
-        });
-
-        spotifyAPI.getData(this.query.request, 'album').then(function(data) {
-            self.albums = data;
-        });
-
-        spotifyAPI.getData(this.query.request, 'track').then(function(data) {
-            self.tracks = data;
-
-            // Get album art for tracks
-            spotifyAPI.getAlbums(self.tracks).then(function(data) {
-                for (var i = 0; i < self.tracks.length; i++) {
-                    self.tracks[i].images = data[i].data.album.images;
-                }
-            });
-        });
+        actions.getArtists(this.query.request);
+        actions.getAlbums(this.query.request);
+        actions.getTracks(this.query.request);
     };
 
 }]);

@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['jshint', 'copyHtml', 'copyLibs', 'build-js', 'build-css', 'watch']);
 
 gulp.task('jshint', function() {
-    return gulp.src(['source/app.js', 'source/api/*.js', 'source/components/grid/*.js', 'source/states/discovery/*.js'])
+    return gulp.src(['source/app.js', 'source/api/*.js', 'source/flux/*.js', 'source/components/grid/*.js', 'source/states/discovery/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'));
 });
@@ -19,7 +19,7 @@ gulp.task('copyLibs', function() {
 });
 
 gulp.task('build-js', function() {        
-    gulp.src(['source/app.js', 'source/api/*.js', 'source/components/grid/*.js', 'source/states/discovery/*.js'])
+    gulp.src(['source/app.js', 'source/api/*.js', 'source/flux/*.js', 'source/components/grid/*.js', 'source/states/discovery/*.js'])
         .pipe(sourcemaps.init())
         .pipe(concat('bundle.js'))
         .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
