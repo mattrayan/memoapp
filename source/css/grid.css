@@ -1,3 +1,13 @@
+.section-title {
+    font-size: 1.5em;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+}
+
 .section-title, md-grid-list {
     background-color: rgba(64,150,238,1);
+}
+
+md-grid-tile {
+    cursor: pointer;
 }
