@@ -1,6 +1,6 @@
 # MusicDB
 
-A Spotify app using AngularJS and Flux
+A Spotify app using AngularJS and Flux (still under construction)
 
 ## Front-End:
 - AngularJS
@@ -15,3 +15,11 @@ A Spotify app using AngularJS and Flux
 - Node.js
 - Express.js
 - MongoDB and Mongoose
+
+## How to Build:
+- npm install
+- bower install
+- Start mongod
+- node server.js
+- gulp
+- Visit localhost:8080
