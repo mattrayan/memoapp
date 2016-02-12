@@ -21,6 +21,6 @@ A Spotify app using AngularJS and Flux (still under construction)
 - npm install
 - bower install
 - Start mongod
-- node server.js
+- npm start
 - gulp
 - Visit localhost:8080
